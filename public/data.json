@@ -1,0 +1,109 @@
+{
+  "personalInfo": {
+    "name": "John Doe",
+    "title": "Full Stack Developer",
+    "location": "San Francisco, CA",
+    "bio": "I am a passionate full-stack developer with a strong background in building modern, scalable web applications. Lets collaborate andbring your ideas to life."
+  },
+  "contactInfo": {
+    "email": "john.doe@example.com",
+    "phone": "123-456-7890",
+    "linkedin": "https://www.linkedin.com/in/johndoe/",
+    "github": "https://github.com/johndoe",
+    "website": "https://johndoe.dev"
+  },
+  "skills": {
+    "languages": ["JavaScript", "Python", "Java", "C++"],
+    "frameworks": ["React", "Node.js", "Express", "Django", "Spring Boot"],
+    "databases": ["MySQL", "MongoDB", "PostgreSQL"],
+    "tools": ["Git", "Docker", "Kubernetes", "Jenkins", "AWS", "GCP"]
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Personal Portfolio",
+      "description": "A personal portfolio website to showcase my projects and skills. Built with React, Next.js, and Tailwind CSS.",
+      "technologies": ["React", "Next.js", "Tailwind CSS"],
+      "link": "https://johndoe.dev"
+    },
+    {
+      "id": "2",
+      "title": "E-commerce Platform",
+      "description": "A full-fledged e-commerce platform with user authentication, product listings, and a shopping cart. Built with MERN stack.",
+      "technologies": ["MongoDB", "Express", "React", "Node.js"],
+      "link": "https://github.com/johndoe/ecommerce-platform"
+    },
+    {
+      "id": "3",
+      "title": "Chat Application",
+      "description": "A real-time chat application with private and group chat functionalities. Built with Socket.io and Node.js.",
+      "technologies": ["Socket.io", "Node.js", "Express", "React"],
+      "link": "https://github.com/johndoe/chat-application"
+    }
+  ],
+  "workExperience": [
+    {
+      "id": "1",
+      "company": "Tech Corp",
+      "companyWebsite": "https://example.com",
+      "role": "Senior Full Stack Developer",
+      "startDate": "Jan 2020",
+      "endDate": "Present",
+      "technologies": ["Socket.io", "Node.js", "Express", "React"],
+      "keyResponsibilities": [
+        "Led a team of developers to create scalable web applications.",
+        "Implemented RESTful and GraphQL APIs using Node.js and Express.",
+        "Developed front-end applications using React and Next.js.",
+        "Integrated third-party services and APIs to enhance application functionality.",
+        "Mentored junior developers and conducted code reviews."
+      ]
+    },
+    {
+      "id": "2",
+      "company": "Web Solutions",
+      "companyWebsite": "https://example.com",
+      "role": "Full Stack Developer",
+      "startDate": "Jun 2017",
+      "endDate": "Dec 2019",
+      "technologies": ["MongoDB", "Express", "React", "Node.js"],
+      "keyResponsibilities": [
+        "Designed and developed web applications using JavaScript and React.",
+        "Built and maintained server-side APIs with Node.js and Express.",
+        "Collaborated with cross-functional teams to deliver high-quality products.",
+        "Ensured applications are responsive and performant.",
+        "Participated in Agile ceremonies and contributed to project planning."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "1",
+      "institution": "Coursera",
+      "degree": "Full Stack Web Development with React",
+      "description": "Completed a Coursera specialization that focused on building full-stack web applications using React, Node.js, Express, and MongoDB. Learned best practices for designing and implementing responsive, scalable, and secure web applications.",
+      "startDate": "Sep 2013",
+      "endDate": "May 2017"
+    },
+    {
+      "id": "2",
+      "institution": "University of California, Berkeley",
+      "degree": "Bachelor of Science in Computer Science",
+      "description": "Completed a comprehensive curriculum in computer science, including courses in data structures, algorithms, software engineering, and artificial intelligence. Worked on several projects, including a web application for managing student organizations and a mobile app for tracking fitness activities.",
+      "startDate": "Sep 2013",
+      "endDate": "May 2017"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "AWS Certified Solutions Architect",
+      "institution": "Amazon Web Services",
+      "date": "Apr 2019"
+    },
+    {
+      "title": "Certified Kubernetes Administrator",
+      "institution": "Cloud Native Computing Foundation",
+      "date": "Nov 2020"
+    }
+  ],
+  "hobbies": ["Hiking", "Reading", "Traveling", "Open Source Contribution"]
+}

@@ -1,113 +1,148 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { getData } from "@/lib/utils";
+import { GitHubLogoIcon, GlobeIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 export default function Home() {
+  const data = getData();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <section className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container grid items-center justify-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-5xl">
+                Hey 👋, I&apos;m {data.personalInfo.name}
+              </h1>
+            </div>
+            <p className="max-w-[600px] text-gray-500 dark:text-gray-400">
+              {data.personalInfo.bio}
+            </p>
+            <Button>Get In Touch</Button>
+          </div>
+          <img
+            src="/placeholder.svg"
+            width="600"
+            height="600"
+            alt="Developer"
+            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
+          />
         </div>
-      </div>
+      </section>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="container max-w-4xl mx-auto py-12 md:py-16 lg:py-20">
+        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
+          Work Experience
+        </h2>
+        <div className="relative pl-6 after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-gray-500/20 dark:after:bg-gray-400/20 grid gap-10">
+          {data.workExperience.map((exp) => (
+            <div key={exp.id} className="grid gap-1 relative">
+              <div className="aspect-square w-3 bg-gray-900 rounded-full absolute left-0 translate-x-[-29.5px] z-10 top-2 dark:bg-gray-50" />
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+              <h4 className="text-xl font-medium">
+                {exp.role} @
+                <Link
+                  href={exp.companyWebsite}
+                  target="_blank"
+                  className="ml-2 text-primary"
+                >
+                  {exp.company}
+                </Link>
+              </h4>
+              <div className="text-gray-500 dark:text-gray-400">
+                {exp.startDate} - {exp.endDate}
+              </div>
+              <div className="mt-2">
+                <h6 className="font-medium">Key Responsibilities:</h6>
+                <ul className="text-gray-500 text-sm list-disc pl-4">
+                  {exp.keyResponsibilities.map((resp) => (
+                    <li key={resp}>{resp}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <section className="container max-w-4xl mx-auto py-12 md:py-16 lg:py-20">
+        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
+          My Projects
+        </h2>
+        <div className="grid grid-cols-1 gap-4 lg:gap-6">
+          {data.projects.map((project) => (
+            <Card key={project.title} className="flex">
+              <img
+                src="/placeholder.svg"
+                alt="Project 1"
+                className="w-1/3 rounded-md object-cover"
+              />
+              <div className="w-2/3">
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                  <div className="space-x-2">
+                    {project.technologies.map((tech) => (
+                      <Badge key={tech} variant="secondary">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardContent>
+                <CardFooter>
+                  <div className="flex space-x-3">
+                    <Link href="#" prefetch={false}>
+                      <Button size="sm">
+                        <GlobeIcon className="h-3 w-3 mr-2" />
+                        Live Demo
+                      </Button>
+                    </Link>
+                    <Link href="#" prefetch={false}>
+                      <Button size="sm" variant="outline">
+                        <GitHubLogoIcon className="h-3 w-3 mr-2" />
+                        Open Repository
+                      </Button>
+                    </Link>
+                  </div>
+                </CardFooter>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <section className="container max-w-4xl mx-auto py-12 md:py-16 lg:py-20">
+        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
+          Education
+        </h2>
+        <div className="relative pl-6 after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-gray-500/20 dark:after:bg-gray-400/20 grid gap-10">
+          {data.education.map((ed) => (
+            <div key={ed.id} className="grid gap-1 relative">
+              <div className="aspect-square w-3 bg-gray-900 rounded-full absolute left-0 translate-x-[-29.5px] z-10 top-2 dark:bg-gray-50" />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+              <h4 className="text-xl font-medium">{ed.degree}</h4>
+              <h5 className="font-medium">{ed.institution}</h5>
+              <div className="text-gray-500 dark:text-gray-400">
+                {ed.startDate} - {ed.endDate}
+              </div>
+              <p className="mt-2 text-sm text-gray-500">{ed.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
