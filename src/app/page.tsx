@@ -10,8 +10,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getData } from "@/lib/utils";
-import { GitHubLogoIcon, GlobeIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import {
+  EnvelopeClosedIcon,
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+  TwitterLogoIcon,
+  GlobeIcon,
+} from "@radix-ui/react-icons";
 
 export default function Home() {
   const data = getData();
@@ -30,6 +36,20 @@ export default function Home() {
               {data.personalInfo.bio}
             </p>
             <Button>Get In Touch</Button>
+            <div className="flex space-x-4">
+              <Button variant="secondary" size="icon">
+                <GitHubLogoIcon className="h-4 w-4" />
+              </Button>
+              <Button variant="secondary" size="icon">
+                <TwitterLogoIcon className="h-4 w-4" />
+              </Button>
+              <Button variant="secondary" size="icon">
+                <LinkedInLogoIcon className="h-4 w-4" />
+              </Button>
+              <Button variant="secondary" size="icon">
+                <EnvelopeClosedIcon className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
           <img
             src="/placeholder.svg"
