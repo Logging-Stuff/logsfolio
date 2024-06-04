@@ -1,3 +1,29 @@
+export interface NavbarLink {
+  label: string;
+  path: string;
+}
+
+export interface Navbar {
+  links: NavbarLink[];
+}
+
+export interface HomeSections {
+  banner: boolean;
+  experience: boolean;
+  project: boolean;
+  education: boolean;
+  testimonial: boolean;
+}
+
+export interface Home {
+  sections: HomeSections;
+}
+
+type Visual = {
+  navbar: Navbar;
+  home: Home;
+};
+
 export interface PersonalInfo {
   name: string;
   title: string;
@@ -47,6 +73,14 @@ export interface Education {
   endDate: string;
 }
 
+export interface Testimonial {
+  id: string;
+  name: string;
+  title: string;
+  company: string;
+  feedback: string;
+}
+
 export interface Certification {
   title: string;
   institution: string;
@@ -62,4 +96,6 @@ export interface Data {
   education: Education[];
   certifications: Certification[];
   hobbies: string[];
+  testimonials: Testimonial[];
+  visual: Visual;
 }

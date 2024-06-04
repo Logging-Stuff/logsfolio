@@ -1,4 +1,35 @@
 {
+  "visual": {
+    "navbar": {
+      "links": [
+        {
+          "label": "Experience",
+          "path": "#experience"
+        },
+        {
+          "label": "Projects",
+          "path": "#projects"
+        },
+        {
+          "label": "Education",
+          "path": "#education"
+        },
+        {
+          "label": "Testimonials",
+          "path": "#testimonials"
+        }
+      ]
+    },
+    "home": {
+      "sections": {
+        "banner": true,
+        "experience": true,
+        "project": true,
+        "education": true,
+        "testimonial": true
+      }
+    }
+  },
   "personalInfo": {
     "name": "John Doe",
     "title": "Full Stack Developer",
@@ -103,6 +134,22 @@
       "title": "Certified Kubernetes Administrator",
       "institution": "Cloud Native Computing Foundation",
       "date": "Nov 2020"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Jane Smith",
+      "title": "Project Manager",
+      "company": "Tech Solutions Inc.",
+      "feedback": "John is a fantastic developer who consistently delivers high-quality work. His ability to solve complex problems is impressive."
+    },
+    {
+      "id": "2",
+      "name": "Mike Johnson",
+      "title": "CEO",
+      "company": "Web Innovators LLC",
+      "feedback": "John is a highly skilled developer who brings a lot of value to our projects. His expertise in full stack development is top-notch."
     }
   ],
   "hobbies": ["Hiking", "Reading", "Traveling", "Open Source Contribution"]

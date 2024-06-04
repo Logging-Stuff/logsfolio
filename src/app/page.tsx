@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getData } from "@/lib/utils";
+import { getData } from "@/lib/serverUtils";
 import Link from "next/link";
 import {
   EnvelopeClosedIcon,
@@ -18,14 +18,18 @@ import {
   TwitterLogoIcon,
   GlobeIcon,
 } from "@radix-ui/react-icons";
+import { Avatar } from "@/components/ui/avatar";
 
-export default function Home() {
-  const data = getData();
+export default async function Home() {
+  const data = await getData();
 
   return (
     <main>
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center justify-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
+      <section
+        id="home"
+        className="container max-w-5xl mx-auto py-12 md:py-24 lg:py-32"
+      >
+        <div className="grid items-center justify-center gap-8 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-4">
             <div className="space-y-2">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-5xl">
@@ -61,7 +65,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container max-w-4xl mx-auto py-12 md:py-16 lg:py-20">
+      <section
+        id="experience"
+        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
+      >
         <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
           Work Experience
         </h2>
@@ -96,7 +103,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container max-w-4xl mx-auto py-12 md:py-16 lg:py-20">
+      <section
+        id="projects"
+        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
+      >
         <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
           My Projects
         </h2>
@@ -144,7 +154,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container max-w-4xl mx-auto py-12 md:py-16 lg:py-20">
+      <section
+        id="education"
+        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
+      >
         <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
           Education
         </h2>
@@ -160,6 +173,36 @@ export default function Home() {
               </div>
               <p className="mt-2 text-sm text-gray-500">{ed.description}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="testimonials"
+        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
+      >
+        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
+          Testimonials
+        </h2>
+
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {data.testimonials.map((t) => (
+            <Card className="p-6 text-left" key={t.id}>
+              <blockquote className="font-medium lg:text-og">
+                &ldquo;{t.feedback}.&rdquo;
+              </blockquote>
+              <div className="mt-4 flex items-center gap-3">
+                <Avatar>
+                  <img src="/placeholder.svg" />
+                </Avatar>
+                <div>
+                  <div className="font-semibold">{t.name}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    {t.title} @ {t.company}
+                  </div>
+                </div>
+              </div>
+            </Card>
           ))}
         </div>
       </section>
