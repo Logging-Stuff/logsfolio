@@ -31,9 +31,9 @@
     }
   },
   "personalInfo": {
-    "name": "John Doe",
+    "name": "Arif Hossain",
     "title": "Full Stack Developer",
-    "location": "San Francisco, CA",
+    "location": "Dhaka, Bangladesh",
     "bio": "I am a passionate full-stack developer with a strong background in building modern, scalable web applications. Lets collaborate andbring your ideas to life."
   },
   "contactInfo": {
@@ -52,24 +52,30 @@
   "projects": [
     {
       "id": "1",
-      "title": "Personal Portfolio",
-      "description": "A personal portfolio website to showcase my projects and skills. Built with React, Next.js, and Tailwind CSS.",
-      "technologies": ["React", "Next.js", "Tailwind CSS"],
-      "link": "https://johndoe.dev"
+      "title": "Makers Tracker",
+      "description": "A project goal tracking tool for professionals. It let's you create project, assign goals and generate analytics to track progress",
+      "technologies": ["Typescript", "Next.js", "TailwindCSS", "MySQL"],
+      "live_url": "https://makerstracker.com",
+      "code_repo_url": "https://makerstracker.com",
+      "cover": "/assets/project_1.jpeg"
     },
     {
       "id": "2",
-      "title": "E-commerce Platform",
-      "description": "A full-fledged e-commerce platform with user authentication, product listings, and a shopping cart. Built with MERN stack.",
-      "technologies": ["MongoDB", "Express", "React", "Node.js"],
-      "link": "https://github.com/johndoe/ecommerce-platform"
+      "title": "Pricing Bees",
+      "description": "A no-code pricing page builder. Build professional-looking pricing pages, customize looks, and get detailed analytics to optimize your pricing strategy.",
+      "technologies": ["Typescript", "Next.js", "Shadcn/ui", "Convex"],
+      "live_url": "https://makerstracker.com",
+      "code_repo_url": "https://makerstracker.com",
+      "cover": "/assets/project_2.jpeg"
     },
     {
       "id": "3",
-      "title": "Chat Application",
-      "description": "A real-time chat application with private and group chat functionalities. Built with Socket.io and Node.js.",
-      "technologies": ["Socket.io", "Node.js", "Express", "React"],
-      "link": "https://github.com/johndoe/chat-application"
+      "title": "Indie Hustles",
+      "description": "A listing site for Indie hackers to promote their products",
+      "technologies": ["Typescript", "Next.js", "TailwindCSS", "Airtable"],
+      "live_url": "https://indiehustles.com",
+      "code_repo_url": "https://indiehustles.com",
+      "cover": "/assets/project_3.jpeg"
     }
   ],
   "workExperience": [
@@ -140,6 +146,7 @@
     {
       "id": "1",
       "name": "Jane Smith",
+      "avatar": "/assets/testimonial_1_avatar.jpg",
       "title": "Project Manager",
       "company": "Tech Solutions Inc.",
       "feedback": "John is a fantastic developer who consistently delivers high-quality work. His ability to solve complex problems is impressive."
@@ -147,6 +154,7 @@
     {
       "id": "2",
       "name": "Mike Johnson",
+      "avatar": "/assets/testimonial_2_avatar.jpg",
       "title": "CEO",
       "company": "Web Innovators LLC",
       "feedback": "John is a highly skilled developer who brings a lot of value to our projects. His expertise in full stack development is top-notch."

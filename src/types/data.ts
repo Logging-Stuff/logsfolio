@@ -50,7 +50,9 @@ export interface Project {
   title: string;
   description: string;
   technologies: string[];
-  link: string;
+  live_url: string;
+  code_repo_url: string;
+  cover: string;
 }
 
 export interface WorkExperience {
@@ -76,6 +78,7 @@ export interface Education {
 export interface Testimonial {
   id: string;
   name: string;
+  avatar: string;
   title: string;
   company: string;
   feedback: string;

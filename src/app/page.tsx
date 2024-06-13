@@ -19,28 +19,38 @@ import {
   GlobeIcon,
 } from "@radix-ui/react-icons";
 import { Avatar } from "@/components/ui/avatar";
+import Image from "next/image";
 
 export default async function Home() {
   const data = await getData();
 
   return (
     <main>
+      {/* Banner Section */}
       <section
         id="home"
         className="container max-w-5xl mx-auto py-12 md:py-24 lg:py-32"
       >
-        <div className="grid items-center justify-center gap-8 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-4">
+        <div className="flex items-center justify-center gap-12">
+          <div className="w-1/3">
+            <Image
+              src="/assets/profile.jpg"
+              width={280}
+              height={280}
+              alt="Developer"
+              className="mx-auto aspect-square overflow-hidden object-cover object-center rounded-full border"
+            />
+          </div>
+          <div className="w-2/3 space-y-4">
             <div className="space-y-2">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-5xl">
                 Hey 👋, I&apos;m {data.personalInfo.name}
               </h1>
             </div>
-            <p className="max-w-[600px] text-gray-500 dark:text-gray-400">
+            <p className="max-w-[600px] lg:text-lg text-gray-500 dark:text-gray-400">
               {data.personalInfo.bio}
             </p>
-            <Button>Get In Touch</Button>
-            <div className="flex space-x-4">
+            <div className="space-x-4">
               <Button variant="secondary" size="icon">
                 <GitHubLogoIcon className="h-4 w-4" />
               </Button>
@@ -55,16 +65,10 @@ export default async function Home() {
               </Button>
             </div>
           </div>
-          <img
-            src="/placeholder.svg"
-            width="600"
-            height="600"
-            alt="Developer"
-            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
-          />
         </div>
       </section>
 
+      {/* Experience Section */}
       <section
         id="experience"
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
@@ -103,6 +107,7 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Projects Section */}
       <section
         id="projects"
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
@@ -113,11 +118,16 @@ export default async function Home() {
         <div className="grid grid-cols-1 gap-4 lg:gap-6">
           {data.projects.map((project) => (
             <Card key={project.title} className="flex">
-              <img
-                src="/placeholder.svg"
-                alt="Project 1"
-                className="w-1/3 rounded-md object-cover"
-              />
+              <div className="w-1/3 p-2 flex items-center">
+                <Image
+                  src={project.cover}
+                  alt="Project 1"
+                  height={200}
+                  width={300}
+                  className="rounded-md object-cover"
+                />
+              </div>
+
               <div className="w-2/3">
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
@@ -154,6 +164,7 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Education Section */}
       <section
         id="education"
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
@@ -177,6 +188,7 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
       <section
         id="testimonials"
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
@@ -193,7 +205,12 @@ export default async function Home() {
               </blockquote>
               <div className="mt-4 flex items-center gap-3">
                 <Avatar>
-                  <img src="/placeholder.svg" />
+                  <Image
+                    height={50}
+                    width={50}
+                    alt="testimonial avatar"
+                    src={t.avatar}
+                  />
                 </Avatar>
                 <div>
                   <div className="font-semibold">{t.name}</div>
