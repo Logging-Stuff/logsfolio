@@ -39,34 +39,15 @@ export default async function Navbar() {
           </SheetTrigger>
           <SheetContent side="right">
             <div className="grid gap-6 p-6">
-              <Link
-                href="#"
-                className="flex items-center justify-between text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                prefetch={false}
-              >
-                Home
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center justify-between text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                prefetch={false}
-              >
-                About
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center justify-between text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                prefetch={false}
-              >
-                Services
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center justify-between text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                prefetch={false}
-              >
-                Contact
-              </Link>
+              {data.visual.navbar.links.map((item) => (
+                <Link
+                  href={item.path}
+                  key={item.path}
+                  className="text-sm transition-colors text-gray-800 hover:text-primary dark:hover:text-gray-50"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </SheetContent>
         </Sheet>

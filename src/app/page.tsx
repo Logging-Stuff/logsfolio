@@ -27,12 +27,9 @@ export default async function Home() {
   return (
     <main>
       {/* Banner Section */}
-      <section
-        id="home"
-        className="container max-w-5xl mx-auto py-12 md:py-24 lg:py-32"
-      >
-        <div className="flex items-center justify-center gap-12">
-          <div className="w-1/3">
+      <section id="home" className="container max-w-5xl mx-auto py-24 lg:py-32">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
+          <div className="w-1/2 mx-auto lg:w-1/3">
             <Image
               src="/assets/profile.jpg"
               width={280}
@@ -41,9 +38,9 @@ export default async function Home() {
               className="mx-auto aspect-square overflow-hidden object-cover object-center rounded-full border"
             />
           </div>
-          <div className="w-2/3 space-y-4">
+          <div className="w-full lg:w-2/3 space-y-4">
             <div className="space-y-2">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-5xl">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tighter ">
                 Hey 👋, I&apos;m {data.personalInfo.name}
               </h1>
             </div>
@@ -95,7 +92,7 @@ export default async function Home() {
         id="experience"
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
       >
-        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
+        <h2 className="font-bold text-3xl md:text-4xl mb-12">
           Work Experience
         </h2>
         <div className="relative pl-6 after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-gray-500/20 dark:after:bg-gray-400/20 grid gap-10">
@@ -134,13 +131,11 @@ export default async function Home() {
         id="projects"
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
       >
-        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
-          My Projects
-        </h2>
+        <h2 className="font-bold text-3xl md:text-4xl mb-12">My Projects</h2>
         <div className="grid grid-cols-1 gap-4 lg:gap-6">
           {data.projects.map((project) => (
-            <Card key={project.title} className="flex">
-              <div className="w-1/3 p-2 flex items-center">
+            <Card key={project.title} className="flex flex-col lg:flex-row">
+              <div className="w-full lg:w-1/3 p-2 flex items-center">
                 <Image
                   src={project.cover}
                   alt="Project 1"
@@ -150,10 +145,10 @@ export default async function Home() {
                 />
               </div>
 
-              <div className="w-2/3">
+              <div className="w-full lg:w-2/3">
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
-                  <div className="space-x-2">
+                  <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="secondary">
                         {tech}
@@ -199,9 +194,7 @@ export default async function Home() {
         id="education"
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
       >
-        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
-          Education
-        </h2>
+        <h2 className="font-bold text-3xl md:text-4xl mb-12">Education</h2>
         <div className="relative pl-6 after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-gray-500/20 dark:after:bg-gray-400/20 grid gap-10">
           {data.education.map((ed) => (
             <div key={ed.id} className="grid gap-1 relative">
@@ -223,9 +216,7 @@ export default async function Home() {
         id="testimonials"
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
       >
-        <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
-          Testimonials
-        </h2>
+        <h2 className="font-bold text-3xl md:text-4xl mb-12">Testimonials</h2>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {data.testimonials.map((t) => (
