@@ -37,10 +37,11 @@
     "bio": "I am a passionate full-stack developer with a strong background in building modern, scalable web applications. Lets collaborate andbring your ideas to life."
   },
   "contactInfo": {
-    "email": "john.doe@example.com",
+    "email": "devarifhossain@gmail.com",
     "phone": "123-456-7890",
-    "linkedin": "https://www.linkedin.com/in/johndoe/",
-    "github": "https://github.com/johndoe",
+    "linkedin": "https://www.linkedin.com/in/ariflogs/",
+    "github": "https://github.com/ariflogs",
+    "twitter": "https://twitter.com/ariflogs",
     "website": "https://johndoe.dev"
   },
   "skills": {
@@ -64,8 +65,8 @@
       "title": "Pricing Bees",
       "description": "A no-code pricing page builder. Build professional-looking pricing pages, customize looks, and get detailed analytics to optimize your pricing strategy.",
       "technologies": ["Typescript", "Next.js", "Shadcn/ui", "Convex"],
-      "live_url": "https://makerstracker.com",
-      "code_repo_url": "https://makerstracker.com",
+      "live_url": "https://pricingbees.com",
+      "code_repo_url": "https://pricingbees.com",
       "cover": "/assets/project_2.jpeg"
     },
     {

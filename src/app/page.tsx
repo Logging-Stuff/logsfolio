@@ -51,18 +51,40 @@ export default async function Home() {
               {data.personalInfo.bio}
             </p>
             <div className="space-x-4">
-              <Button variant="secondary" size="icon">
-                <GitHubLogoIcon className="h-4 w-4" />
-              </Button>
-              <Button variant="secondary" size="icon">
-                <TwitterLogoIcon className="h-4 w-4" />
-              </Button>
-              <Button variant="secondary" size="icon">
-                <LinkedInLogoIcon className="h-4 w-4" />
-              </Button>
-              <Button variant="secondary" size="icon">
-                <EnvelopeClosedIcon className="h-4 w-4" />
-              </Button>
+              <Link
+                target="_blank"
+                href={data.contactInfo.github}
+                prefetch={false}
+              >
+                <Button variant="secondary" size="icon">
+                  <GitHubLogoIcon className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link
+                target="_blank"
+                href={data.contactInfo.twitter}
+                prefetch={false}
+              >
+                <Button variant="secondary" size="icon">
+                  <TwitterLogoIcon className="h-4 w-4" />
+                </Button>
+              </Link>
+
+              <Link
+                target="_blank"
+                href={data.contactInfo.linkedin}
+                prefetch={false}
+              >
+                <Button variant="secondary" size="icon">
+                  <LinkedInLogoIcon className="h-4 w-4" />
+                </Button>
+              </Link>
+
+              <Link href={`mailto:${data.contactInfo.email}`}>
+                <Button variant="secondary" size="icon">
+                  <EnvelopeClosedIcon className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -144,13 +166,21 @@ export default async function Home() {
                 </CardContent>
                 <CardFooter>
                   <div className="flex space-x-3">
-                    <Link href="#" prefetch={false}>
+                    <Link
+                      target="_blank"
+                      href={project.live_url}
+                      prefetch={false}
+                    >
                       <Button size="sm">
                         <GlobeIcon className="h-3 w-3 mr-2" />
                         Live Demo
                       </Button>
                     </Link>
-                    <Link href="#" prefetch={false}>
+                    <Link
+                      target="_blank"
+                      href={project.code_repo_url}
+                      prefetch={false}
+                    >
                       <Button size="sm" variant="outline">
                         <GitHubLogoIcon className="h-3 w-3 mr-2" />
                         Open Repository
