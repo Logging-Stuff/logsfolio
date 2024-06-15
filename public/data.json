@@ -131,18 +131,6 @@
       "endDate": "May 2017"
     }
   ],
-  "certifications": [
-    {
-      "title": "AWS Certified Solutions Architect",
-      "institution": "Amazon Web Services",
-      "date": "Apr 2019"
-    },
-    {
-      "title": "Certified Kubernetes Administrator",
-      "institution": "Cloud Native Computing Foundation",
-      "date": "Nov 2020"
-    }
-  ],
   "testimonials": [
     {
       "id": "1",
@@ -160,6 +148,5 @@
       "company": "Web Innovators LLC",
       "feedback": "John is a highly skilled developer who brings a lot of value to our projects. His expertise in full stack development is top-notch."
     }
-  ],
-  "hobbies": ["Hiking", "Reading", "Traveling", "Open Source Contribution"]
+  ]
 }
