@@ -256,7 +256,7 @@ export default async function Home() {
       >
         <h2 className="font-bold text-3xl md:text-5xl mb-12">Blogs</h2>
 
-        <div className="space-y-6">
+        <div className="flex flex-col space-y-8">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blogs/${post.slug}`}>
               <h3 className="text-xl md:text-3xl font-semibold">
