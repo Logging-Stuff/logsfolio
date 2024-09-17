@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { JSX, SVGProps } from "react";
 import { getJSONData } from "@/lib/serverUtils";
 import Image from "next/image";
+import ThemeToggler from "./themeToggler";
 
 export default async function Navbar() {
   const data = await getJSONData();
@@ -20,11 +21,12 @@ export default async function Navbar() {
           />
         </Link>
         <nav className="hidden space-x-4 lg:flex">
+          <ThemeToggler />
           {data.visual.navbar.links.map((item) => (
             <Link
               href={item.path}
               key={item.path}
-              className="text-sm transition-colors text-gray-800 hover:text-primary dark:hover:text-gray-50"
+              className="text-sm transition-colors text-gray-350 hover:text-primary dark:hover:text-gray-50"
             >
               {item.label}
             </Link>
@@ -39,11 +41,12 @@ export default async function Navbar() {
           </SheetTrigger>
           <SheetContent side="right">
             <div className="grid gap-6 p-6">
+              <ThemeToggler />
               {data.visual.navbar.links.map((item) => (
                 <Link
                   href={item.path}
                   key={item.path}
-                  className="text-sm transition-colors text-gray-800 hover:text-primary dark:hover:text-gray-50"
+                  className="text-sm transition-colors text-gray-350 hover:text-primary dark:hover:text-gray-50"
                 >
                   {item.label}
                 </Link>

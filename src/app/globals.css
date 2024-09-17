@@ -177,3 +177,8 @@ html {
     font-size: 0.875em;
   }
 }
+
+body.dark {
+  background: #000;
+  color: #aeaeae;
+}

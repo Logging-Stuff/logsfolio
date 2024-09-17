@@ -39,7 +39,7 @@ export default async function Home() {
               width={280}
               height={280}
               alt="Developer"
-              className="mx-auto aspect-square overflow-hidden object-cover object-center rounded-full border"
+              className="mx-auto aspect-square overflow-hidden object-cover object-center rounded-full"
             />
           </div>
           <div className="w-full lg:w-2/3 space-y-4">
